@@ -608,15 +608,18 @@ class Console(object):
         self.serial += 1
         return self.serial
 
+# Use a local handle to the kernel32 DLL to avoid problems from setting
+# .restype and .argtypes below that could result from sharing windll.kernel32
+# with other projects.
+k32 = WinDLL('kernel32')
 # add the functions from the dll to the class
 for func in funcs:
-    setattr(Console, func, getattr(windll.kernel32, func))
+    setattr(Console, func, getattr(k32, func))
 
-
-_strncpy = ctypes.windll.kernel32.lstrcpynA
+_strncpy = k32.lstrcpynA
 _strncpy.restype = c_char_p
 _strncpy.argtypes = [c_char_p, c_char_p, c_size_t]
-
+del k32
 
 LPVOID = c_void_p
 LPCVOID = c_void_p
