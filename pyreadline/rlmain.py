@@ -596,5 +596,4 @@ class Readline(BaseReadline):
         return event
 
     def redisplay(self):
-        self._print_prompt()
         self._update_line()
