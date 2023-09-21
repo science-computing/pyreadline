@@ -23,7 +23,7 @@ name = 'pyreadline'
 
 branch = ''
 
-version = '2.1'
+version = '2.1.fg2'
 
 description = "A python implmementation of GNU readline."
 
@@ -32,6 +32,20 @@ long_description = \
 The pyreadline package is a python implementation of GNU readline functionality
 it is based on the ctypes based UNC readline package by Gary Bishop.
 It is not complete. It has been tested for use with windows 2000 and windows xp.
+
+* pyreadline 2.1.fg2 <2023-09-21>
+
+  This is 2.1 with some fixes from https://github.com/pyreadline/pyreadline.
+ 
+Features:
+ *  merged https://github.com/pyreadline/pyreadline/pull/24 (only the "local handle" part)
+ *  merged https://github.com/pyreadline/pyreadline/pull/27
+ *  merged https://github.com/pyreadline/pyreadline/pull/42
+ *  merged https://github.com/pyreadline/pyreadline/pull/48
+ *  merged https://github.com/pyreadline/pyreadline/pull/56
+ *  Implement readline.redisplay(), fixing #49
+ *  merged https://github.com/pyreadline/pyreadline/pull/60
+ *  merged https://github.com/pyreadline/pyreadline/pull/67
 
 * pyreadline 2.1 <2015-09-16>
 
